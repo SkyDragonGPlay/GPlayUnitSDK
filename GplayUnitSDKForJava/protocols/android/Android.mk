@@ -1,0 +1,12 @@
+LOCAL_PATH := $(call my-dir)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := UnitSDKStatic
+LOCAL_MODULE_FILENAME := libUnitSDKStatic
+
+LOCAL_SRC_FILES := ../../lib/$(TARGET_ARCH_ABI)/libUnitSDKStatic.a
+LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)/../include $(LOCAL_PATH)
+LOCAL_EXPORT_LDLIBS += -llog
+LOCAL_EXPORT_LDLIBS += -lz
+
+include $(PREBUILT_STATIC_LIBRARY)
